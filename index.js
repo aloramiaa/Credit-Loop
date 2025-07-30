@@ -6,12 +6,23 @@ const PORT = process.env.PORT || 3000;
 
 // Account 1: Dc-lora
 const curl1 = `curl -X POST "https://panel.voidhost.pro/api/client/store/earn" \
-  -H "Accept: application/json" \
-  -H "Origin: https://panel.voidhost.pro" \
-  -H "Referer: https://panel.voidhost.pro/store/credits" \
+  -H "accept: application/json" \
+  -H "accept-encoding: gzip, deflate, br, zstd" \
+  -H "accept-language: en-GB,en;q=0.5" \
+  -H "content-length: 0" \
+  -H "origin: https://panel.voidhost.pro" \
+  -H "referer: https://panel.voidhost.pro/store/credits" \
+  -H "sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Brave\";v=\"138\"" \
+  -H "sec-ch-ua-mobile: ?0" \
+  -H "sec-ch-ua-platform: \"Windows\"" \
+  -H "sec-fetch-dest: empty" \
+  -H "sec-fetch-mode: cors" \
+  -H "sec-fetch-site: same-origin" \
+  -H "sec-gpc: 1" \
+  -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" \
   -H "x-requested-with: XMLHttpRequest" \
-  -H "x-xsrf-token: eyJpdiI6InpDUDFhK05IYm5Cc2tFWTkrQThJaHc9PSIsInZhbHVlIjoiaGVTeldIbHpMaFAyVVV0dFBDN3BVODN3QlhtVWk0YUxMZU1nRFBRWUtLYVUwVkFIbVoxL0FnSGpEUzZtNTJ2bFR4aGtBTHRzc0VJTHRyUUt2UzN6TS8vTkd3VVVobndTcGJpd2lxdlRVck56VEpha1JrZjZEZGxVL3lNZkxoUXciLCJtYWMiOiI4MDZkNTRiZjEwMDE0ZDAxZmI2YjIwOWIyNDI5NThlNDZmOWRiMjljYTRhOTBiMzk1ODUzNzY5OTYxZjM1OGVmIiwidGFnIjoiIn0=" \
-  -H "Cookie: remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IlROTGxOcHFYTyt3QUh5WHRRZWpTbFE9PSIsInZhbHVlIjoiNitxY29IYjlpdGxvdE1pSFVyV3FCSWtIdUxaQ0pRVzdhUHg1WjV1YVJCVjVFaEd4b3BLYjlydmFMd2U4OFdLcjd3MVlUVW5DeFlKRnhXWmV5dis3YnRxM2ZEVzVhYkFPdHFTbUxhY1Rzc0o3YkZuWWtnNGFxSTJqaUFkVXphcEtWL3hnVjJUdVpUNFNaQ3F1bFZ4VTYyTU4yNTFERldtZzl5R1FqcDlnai9PMUIwVEhzSlp1WGVPeTdUOC9zL1BPMGpSb3U1Q3l1WVQxc0xyVldhamc5c28xbVZ1MEZjK1NlODZpTnIwZkM4dz0iLCJtYWMiOiIyNGFlYjQ1NWMyMDAwYzVlN2E3MzRmNWRlMjRmZWZlZjUyYTcxMjI0MTJmYzc5ODI5MjM0OGYxOGU2OTAxNGZmIiwidGFnIjoiIn0%3D; XSRF-TOKEN=eyJpdiI6InpDUDFhK05IYm5Cc2tFWTkrQThJaHc9PSIsInZhbHVlIjoiaGVTeldIbHpMaFAyVVV0dFBDN3BVODN3QlhtVWk0YUxMZU1nRFBRWUtLYVUwVkFIbVoxL0FnSGpEUzZtNTJ2bFR4aGtBTHRzc0VJTHRyUUt2UzN6TS8vTkd3VVVobndTcGJpd2lxdlRVck56VEpha1JrZjZEZGxVL3lNZkxoUXciLCJtYWMiOiI4MDZkNTRiZjEwMDE0ZDAxZmI2YjIwOWIyNDI5NThlNDZmOWRiMjljYTRhOTBiMzk1ODUzNzY5OTYxZjM1OGVmIiwidGFnIjoiIn0%3D" \
+  -H "x-xsrf-token: eyJpdiI6IjR3VXFlbU0vNzgxR08wTisvTnlySmc9PSIsInZhbHVlIjoiMFN3NkF6S0c0Y2dzMjBLZUhhSjdRd29yblMycDVxcGhJRG1nU3AvTmZoR3Rtb0Q4b1g5eUkwQUY3dVlTQUhlSmJiamJDVldwazVsZ1N1WTNZU2VUSHB5YW1RaGRJejVRSmlBRVFHSmhYSXRDbEFqdndFSFlIUURMTmRYQ0RkVTgiLCJtYWMiOiJlYTQwYWQwMjY1NDliMjQzNzYwMWU2MTBiY2E5ZTFhM2VjMzJlMzBjMDAxNzgzNGJhNWUzMmZkMjA1NGRlMGQ3IiwidGFnIjoiIn0=" \
+  -H "cookie: remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IlROTGxOcHFYTyt3QUh5WHRRZWpTbFE9PSIsInZhbHVlIjoiNitxY29IYjlpdGxvdE1pSFVyV3FCSWtIdUxaQ0pRVzdhUHg1WjV1YVJCVjVFaEd4b3BLYjlydmFMd2U4OFdLcjd3MVlUVW5DeFlKRnhXWmV5dis3YnRxM2ZEVzVhYkFPdHFTbUxhY1Rzc0o3YkZuWWtnNGFxSTJqaUFkVXphcEtWL3hnVjJUdVpUNFNaQ3F1bFZ4VTYyTU4yNTFERldtZzl5R1FqcDlnai9PMUIwVEhzSlp1WGVPeTdUOC9zL1BPMGpSb3U1Q3l1WVQxc0xyVldhamc5c28xbVZ1MEZjK1NlODZpTnIwZkM4dz0iLCJtYWMiOiIyNGFlYjQ1NWMyMDAwYzVlN2E3MzRmNWRlMjRmZWZlZjUyYTcxMjI0MTJmYzc5ODI5MjM0OGYxOGU2OTAxNGZmIiwidGFnIjoiIn0%3D; XSRF-TOKEN=eyJpdiI6IjR3VXFlbU0vNzgxR08wTisvTnlySmc9PSIsInZhbHVlIjoiMFN3NkF6S0c0Y2dzMjBLZUhhSjdRd29yblMycDVxcGhJRG1nU3AvTmZoR3Rtb0Q4b1g5eUkwQUY3dVlTQUhlSmJiamJDVldwazVsZ1N1WTNZU2VUSHB5YW1RaGRJejVRSmlBRVFHSmhYSXRDbEFqdndFSFlIUURMTmRYQ0RkVTgiLCJtYWMiOiJlYTQwYWQwMjY1NDliMjQzNzYwMWU2MTBiY2E5ZTFhM2VjMzJlMzBjMDAxNzgzNGJhNWUzMmZkMjA1NGRlMGQ3IiwidGFnIjoiIn0%3D; jexactyl_session=eyJpdiI6InJOamEyMHBTei9pdXNYVFZ4VytXRlE9PSIsInZhbHVlIjoiSHlsUWxSb2FGdEIrZENiWEVMMElBMFIzSjYrcENsZU5Oc2dFQUtpWmFYM05zd21WR1lqMUdXUzR4MUpZZkc1VXQrcjdyRlg4M25aRVN2QXpZSHRGSHo5SnQwbm80aXh2WmhpeUkvN3J4TisvUjd3S0d4aHJ0MmR2RGpUeGRXUWQiLCJtYWMiOiJjZDZhY2ZmOGRmMmMwZTczZGNmMDFiZmY3YWJkYWQ2Y2I1ZjgwMDJhOTM2ODM1ZjI4MDZjYmFiNWQ2Mzc5NzA0IiwidGFnIjoiIn0%3D" \
   --compressed`;
 
 // Account 2: xaloramia
