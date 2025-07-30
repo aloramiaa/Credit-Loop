@@ -81,8 +81,8 @@ function runAll() {
   runCurl("kinghtth0", curl3);
 }
 
-// Run every 10 seconds
-setInterval(runAll, 10000);
+// Run every 61 seconds
+setInterval(runAll, 61000);
 
 // Uptime endpoint
 app.get('/', (req, res) => {
