@@ -64,8 +64,14 @@ const curl3 = `curl -X POST "https://panel.voidhost.pro/api/client/store/earn" \
 function runCurl(name, cmd) {
   exec(cmd, (error, stdout, stderr) => {
     const now = new Date().toLocaleTimeString();
-    if (error) {
-      console.error(`[${now}] ❌ ${name} FAILED:`, stderr.trim() || error.message);
+    // Check for error or 419 status code in output
+    const output = (stdout + stderr).toString();
+    if (error || output.includes('419')) {
+      let reason = stderr.trim() || error?.message || '';
+      if (output.includes('419')) {
+        reason = (reason ? reason + ' ' : '') + '[HTTP 419]';
+      }
+      console.error(`[${now}] ❌ ${name} FAILED:`, reason.trim());
     } else {
       console.log(`[${now}] ✅ ${name} request succeeded.`);
     }
