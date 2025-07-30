@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Account 1: Dc-lora
-const curl1 = `curl -X POST "https://panel.voidhost.pro/api/client/store/earn" \
+const curl1 = `curl -s -o /dev/null -w "%{http_code}" -X POST "https://panel.voidhost.pro/api/client/store/earn" \
   -H 'accept: application/json' \
   -H 'accept-encoding: gzip, deflate, br, zstd' \
   -H 'accept-language: en-GB,en;q=0.5' \
@@ -26,7 +26,7 @@ const curl1 = `curl -X POST "https://panel.voidhost.pro/api/client/store/earn" \
   --compressed`;
 
 // Account 2: xaloramia
-const curl2 = `curl -X POST "https://panel.voidhost.pro/api/client/store/earn" \
+const curl2 = `curl -s -o /dev/null -w "%{http_code}" -X POST "https://panel.voidhost.pro/api/client/store/earn" \
   -H 'accept: application/json' \
   -H 'accept-encoding: gzip, deflate, br, zstd' \
   -H 'accept-language: en-GB,en;q=0.5' \
@@ -47,7 +47,7 @@ const curl2 = `curl -X POST "https://panel.voidhost.pro/api/client/store/earn" \
   --compressed`;
 
 // Account 3: kinghtth0
-const curl3 = `curl -X POST "https://panel.voidhost.pro/api/client/store/earn" \
+const curl3 = `curl -s -o /dev/null -w "%{http_code}" -X POST "https://panel.voidhost.pro/api/client/store/earn" \
   -H 'Accept: application/json' \
   -H 'Accept-Encoding: gzip, deflate, br, zstd' \
   -H 'Accept-Language: en-GB,en;q=0.6' \
@@ -64,16 +64,13 @@ const curl3 = `curl -X POST "https://panel.voidhost.pro/api/client/store/earn" \
 function runCurl(name, cmd) {
   exec(cmd, (error, stdout, stderr) => {
     const now = new Date().toLocaleTimeString();
-    // Check for error or 419 status code in output
-    const output = (stdout + stderr).toString();
-    if (error || output.includes('419')) {
-      let reason = stderr.trim() || error?.message || '';
-      if (output.includes('419')) {
-        reason = (reason ? reason + ' ' : '') + '[HTTP 419]';
-      }
-      console.error(`[${now}] ❌ ${name} FAILED:`, reason.trim());
+    const status = stdout.trim();
+    if (status === '419') {
+      console.log(`[${now}] ${name}: 419 (FAILED)`);
+    } else if (status === '204') {
+      console.log(`[${now}] ${name}: 204 (SUCCESS)`);
     } else {
-      console.log(`[${now}] ✅ ${name} request succeeded.`);
+      console.log(`[${now}] ${name}: ${status}`);
     }
   });
 }
