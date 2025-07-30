@@ -32,7 +32,7 @@ async function sendRequest() {
 }
 
 // Run every 20 seconds
-setInterval(sendRequest, 20000);
+setInterval(sendRequest, 61000);
 
 // UptimeRobot endpoint
 app.get('/', (req, res) => {
