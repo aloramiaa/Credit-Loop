@@ -61,6 +61,27 @@ const curl3 = `curl -s -o /dev/null -w "%{http_code}" -X POST "https://panel.voi
   -H 'Cookie: remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6ImJVK1VMV0VCc09UNEV6MnVxcnhQbWc9PSIsInZhbHVlIjoiSHUxQXU5alNPc2RJUXJ4LzB1M0ZMaC9hMXliUkZvWnhmSmlZM0ZSVDVoTmNTSys1b1VGbEpabWUwdHdkQTFURVFXcUNaSW9iTGJVUCs2Q3J0cU8wUm5HUjlKZ0hFeHhQV2RmMmdNQ0cwZlB0bzdMZFRvUjNZam5JcHNRSXdoWEIxRkxkKy9qVFRWVVROYkZ4UEhLOHIxMUI2SlBNUDRWR0Fvck0yTk9kblE4UFN6dCtuY2dDMENFSC9pK3VYeU13R2ZUelhrdHVvSER3NktKanVhTlpiQWZJRGhXc2l4cUIvYnkrQkRJaXljTT0iLCJtYWMiOiJkNzZkYTVjZTA2MWI0NzViZjUzZmJjYmY4OGMwZDVhMDVmNTQwM2Y4YTlkNzZiMWNhZTFlYjEyYzk3MjA5ZTk5IiwidGFnIjoiIn0%3D; XSRF-TOKEN=eyJpdiI6IkFQS1hYalgrQ1k5Yi8rWnpVaERyS2c9PSIsInZhbHVlIjoiSlJqY0RGeEVnS0Z2Z2xqV1RjamNOTDhEZVUrb0JHRlFWa0FIYU03WTFuWDk3eTM4ZkU5QkZydHFyc0VBaWRIL3dteC9XRWladVl1bG04dk5EaVBFeXNsSVIxUHpxOXVSekFwM0ZmRHJEL1pBaVRmSU1hMkRyWTVCdnhCalhBUzEiLCJtYWMiOiIwMDE5ZjdmMWY1NDkwM2VhZmUxMzEyMWRhYWM0ZDFhOTg1YzkzNzE0N2I1MjMxMWVhYjIxZjZhOGNiNjY5OWJjIiwidGFnIjoiIn0%3D; jexactyl_session=eyJpdiI6IlRxbmtKeitNOFFCYnZDWUtiOVdiN0E9PSIsInZhbHVlIjoiWDdYWUhVTVVJTWk3Rkd4UkQxWndQQi9nTktGSnB3emtZa01tSHl0VitMNXBxQ2R2Y1VTMVZydFlwNE5GMHcyZmhobVNYU2JpM0ZJRnZxRnlXSzhMcWFuYVdEREVEdW1RN1pUNXp2WDU5dEQ0M2hqeC9hSHNISS95QkVoMVlKelgiLCJtYWMiOiIxNzhkZmRmMWIzYmZkMjdiMTE4M2Q1YjBkYzc5NGIyYzJmMzUzN2I3YmQzYTkzNjg3N2Q4YWYwNjhkMmFlNWMwIiwidGFnIjoiIn0%3D' \
   --compressed`;
 
+// Account 4: Nyanpasu
+const curl4 = `curl -s -o /dev/null -w "%{http_code}" -X POST "https://panel.voidhost.pro/api/client/store/earn" \
+  -H 'accept: application/json' \
+  -H 'accept-encoding: gzip, deflate, br, zstd' \
+  -H 'accept-language: en-GB,en;q=0.6' \
+  -H 'content-length: 0' \
+  -H 'cookie: remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IlRaZmI5emJSQWFHbEo4RDhHTFprNVE9PSIsInZhbHVlIjoiMklTUHFvVldZM3dUK3pxM1E0S1Y1RWUrZWpaRURxN3k1cWticXdvdXliaG45ZUxianFKcmt2bStvVmhDakJVZ1FmZmVTOElVT1JZdjNteGNsQ2R3QitSZWEyK0tLalh3cDMyR2hJNEZMMHo0cjluMWF6VE5IRnpTSGNwVG1ROVd4STRZN2U1RUhURnVwL3NhdnIvZGNSdldTY3NCaXhjTWRvNUZZNVgwQkJ1UVFmUTJEUWhUdDgrRHVjWTU3M250eTREeUNLODUvRHFjRDQzWXA0K04yTi95aS9NcEZUZm5MZ2tnN213S3RQST0iLCJtYWMiOiJlOWJlNzkzMTA5NjAwMjYxNjljZjcxOThjZGVlZTkyZWVhZDdiYjEzMDhhNzllNjVkNGU0MTYxZTU2NzFmZTY4IiwidGFnIjoiIn0%3D; XSRF-TOKEN=eyJpdiI6IlFKbnFnVCtZdVpDeDFzODFPT05uWlE9PSIsInZhbHVlIjoiSUZENDQrKzcyQm1Ecnc2dDRTS3J1WTBKMWN5MDk2T3RJV1czQ3E5VWQ4RWprTkcya04wdE5TRytwNEk1YmRxN1I3SHhrWUllWlhiVjd3MnhvcWZoOWVLNkcrRlBaNGc2SWdzRitDTjVzSEJ4eHlyZEFuMUQxVjdIVTZNbmNTRTgiLCJtYWMiOiI3NzAzNmNmNTk3OWYzNzYzMjJmYTU5NTEwYzQ0MmI1ZDk3NTI2ZWY3OGJlMzZkOTY1NDA0NmVlZDZlZTAwOGVkIiwidGFnIjoiIn0%3D; jexactyl_session=eyJpdiI6IkdWYXFXdHlKcG5nNWF3enQ1ZUFEOHc9PSIsInZhbHVlIjoiMVIyU1MyWFhlRXdrdnV4cDlqeEl4KzNFQ3puY1pCblJPNDloZEduSmhBblhiYWxEM1dYcS9KSDZFaXJ3WklKU0tXdXByanprOFBzU0QzUlBGU0FYY0ZvQTlWRVlrODdnVWI3ZEQ3cDB0R2ZBdWZpWnVNOXpCdTBzZzVJOStVQ0YiLCJtYWMiOiJiZGU0MjBjMzg3MzcyYzVkYzU4NzFjYTQ4YTBiNTUwOTMwN2IzMDVmZGJlNzQ5YjI2NTY5MmE3N2NjYTNjMWMxIiwidGFnIjoiIn0%3D' \
+  -H 'origin: https://panel.voidhost.pro' \
+  -H 'referer: https://panel.voidhost.pro/store/credits' \
+  -H 'sec-ch-ua: "Not)A;Brand";v="8", "Chromium";v="138", "Brave";v="138"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-gpc: 1' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \
+  -H 'x-requested-with: XMLHttpRequest' \
+  -H 'x-xsrf-token: eyJpdiI6IlFKbnFnVCtZdVpDeDFzODFPT05uWlE9PSIsInZhbHVlIjoiSUZENDQrKzcyQm1Ecnc2dDRTS3J1WTBKMWN5MDk2T3RJV1czQ3E5VWQ4RWprTkcya04wdE5TRytwNEk1YmRxN1I3SHhrWUllWlhiVjd3MnhvcWZoOWVLNkcrRlBaNGc2SWdzRitDTjVzSEJ4eHlyZEFuMUQxVjdIVTZNbmNTRTgiLCJtYWMiOiI3NzAzNmNmNTk3OWYzNzYzMjJmYTU5NTEwYzQ0MmI1ZDk3NTI2ZWY3OGJlMzZkOTY1NDA0NmVlZDZlZTAwOGVkIiwidGFnIjoiIn0=' \
+  --compressed`;
+
 function runCurl(name, cmd) {
   exec(cmd, (error, stdout, stderr) => {
     const now = new Date().toLocaleTimeString();
@@ -79,6 +100,7 @@ function runAll() {
   runCurl("Dc-lora", curl1);
   runCurl("xaloramia", curl2);
   runCurl("kinghtth0", curl3);
+  runCurl("Nyanpasu", curl4);
 }
 
 // Run every 61 seconds
